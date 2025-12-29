@@ -1,6 +1,8 @@
 import { Star, Phone, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import gymBackgroundVideo from "@/assets/gym-background-video.mp4";
 import gymFloor from "@/assets/gym-floor.png";
+import logo from "@/assets/fitpro-logo.png";
 
 const HeroSection = () => {
   return (
@@ -8,13 +10,18 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20"
     >
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0">
-        <img
-          src={gymFloor}
-          alt="FITPRO Gym Interior"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster={gymFloor}
           className="w-full h-full object-cover"
-        />
+        >
+          <source src={gymBackgroundVideo} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
       </div>
@@ -22,8 +29,17 @@ const HeroSection = () => {
       {/* Content */}
       <div className="section-container relative z-10 py-20 md:py-32">
         <div className="max-w-3xl">
+          {/* Logo */}
+          <div className="mb-8 animate-fade-in-up">
+            <img
+              src={logo}
+              alt="FITPRO FITNESS CLUB"
+              className="h-24 md:h-32 lg:h-40 w-auto mx-auto drop-shadow-2xl"
+            />
+          </div>
+
           {/* Rating Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/80 backdrop-blur-sm border border-border mb-8 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/80 backdrop-blur-sm border border-border mb-8 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
             <div className="flex items-center gap-1">
               <Star className="h-5 w-5 fill-primary text-primary" />
               <span className="text-primary font-bold">4.8</span>
@@ -33,19 +49,19 @@ const HeroSection = () => {
           </div>
 
           {/* Headline */}
-          <h1 className="heading-xl text-foreground mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+          <h1 className="heading-xl text-foreground mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             Transform Your Body.{" "}
             <span className="text-gradient-gold">Transform Your Life.</span>
           </h1>
 
           {/* Sub-headline */}
-          <p className="body-lg text-muted-foreground mb-8 max-w-xl animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <p className="body-lg text-muted-foreground mb-8 max-w-xl animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             Experience personalized training with certified trainers in Kozhikode's premier fitness center. 
             Modern equipment, expert guidance, and a motivating atmosphere await you.
           </p>
 
           {/* Features List */}
-          <div className="flex flex-wrap gap-4 mb-10 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+          <div className="flex flex-wrap gap-4 mb-10 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
             {["Personalized Training", "Certified Trainers", "Premium Equipment"].map((feature) => (
               <div
                 key={feature}
@@ -58,7 +74,7 @@ const HeroSection = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
             <a href="tel:07947126210">
               <Button variant="hero" size="xl" className="w-full sm:w-auto gap-2">
                 <Phone className="h-5 w-5" />
